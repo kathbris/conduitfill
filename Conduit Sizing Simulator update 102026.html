@@ -1,0 +1,409 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Conduit Sizing Lab</title><style>
+/*RESET*/
+html, body, h1, h2, h3, h4, h5, h6, img, p, ul, ol, li, a, figure, figcaption, table {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: normal;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	color: inherit;
+	vertical-align: baseline;
+	line-height: 0;
+}
+/*SCHOOL COLOURS*/
+body#bus h1, body#bus h2 {
+	background-color: #c59217;
+}
+body#bus h3, body#bus a {
+	color: #c59217;
+}
+body#cons h1, body#cons h2 {
+	background-color: #4b92db;
+}
+body#cons h3, body#cons a {
+	color: #4b92db;
+}
+body#mse h1, body#mse h2 {
+	background-color: #007f64;
+}
+body#mse h3, body#mse a {
+	color: #007f64;
+}
+body#hps h1, body#hps h2 {
+	background-color: #006890;
+}
+body#hps h3, body#hps a {
+	color: #006890;
+}
+body#ict h1, body#ict h2 {
+	background-color: #007698;
+}
+body#ict h3, body#ict a {
+	color: #007698;
+}
+body#ma h1, body#ma h2 {
+	background-color: #aa272f;
+}
+body#ma h3, body#ma a {
+	color: #aa272f;
+}
+body#trans h1, body#trans h2 {
+	background-color: #44697d;
+}
+body#trans h3, body#trans a {
+	color: #44697d;
+}
+body#ht h1, body#ht h2 {
+	background-color: #d52b1e;
+}
+body#ht h3, body#ht a {
+	color: #d52b1e;
+}
+body#cals h1, body#cals h2 {
+	background-color: #e9994a;
+}
+body#cals h3, body#cals a {
+	color: #e9994a;
+}
+body#ct h1, body#ct h2 {
+	background-color: #8c8b8a
+}
+body#ct h3, body#ct a {
+	color: #444;
+}
+/*GENERAL*/
+body, h1, h2, table {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box; /* Firefox */
+	-webkit-box-sizing: border-box; /* Safari */
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 80px 20px 80px;
+}
+h1, h2, h3, h4, h5, h6, figcaption {
+	line-height: 1;
+}
+h1, h3, h4, h5, h6, thead {
+	font-weight: bold;
+}
+h1, h2 {
+	width: 100%;
+	font-size: 16px;
+	color: #fff;
+}
+h1 {
+	padding: 15px 15px 10px 15px;
+	text-transform: uppercase;
+}
+h2 {
+	padding: 0px 15px 15px 15px;
+	font-style: italic;
+}
+h3, h4, h5, h6, p, a, li, figcaption, table {
+	font-size: 14px;
+}
+h3, h4, h5, p, li, figcaption, table {
+	color: #535557;
+}
+h3 {
+	text-transform: uppercase;
+}
+h3 {
+	width: 100%;
+	margin-top: 40px;
+	border-bottom: 2px solid;
+}
+h6 {
+	color: #aaabab;
+}
+h4, h5, h6, p, ul, ol, img {
+	margin-top: 15px;
+}
+ul ul, ul ol, ol ul, ol ol {
+	margin-top: 0 !important;
+}
+p, a, li, table {
+	line-height: 145%;
+}
+p#em {
+	line-height: 100%;
+	font-style:italic;
+	font-weight:bold;
+}
+li {
+	margin-left: 40px;
+}
+ul li {
+	list-style-type: square;
+}
+a {
+	font-weight: bold;
+}
+a:hover {
+	color: #aaabab !important;
+}
+/*IMAGES*/
+img, figcaption {
+	display: block;
+}
+img.large {
+	width: 100%;
+	height: 100%;
+}
+img.small {
+	width: 50%;
+	height: 100%;
+}
+figcaption {
+	margin-top: 5px;
+	font-weight: bold;
+}
+/*TABLE SPECIFIC*/
+table {
+	margin-top: 15px;
+	border-collapse: collapse;
+}
+table, th, td {
+	border: 1px solid #aaabab;
+}
+th, td {
+	padding: 5px;
+}
+/*FOOTER*/
+p#footer {
+	width: 100%;
+	margin: 45px 0 0 0;
+	padding-top: 15px;
+	border-top: 1px solid;
+	text-align: center;
+	color: #aaabab;
+}
+.column {
+    float: left;
+    width: 50%;
+    }
+
+/*CONDUIT SIZING LAB (simulator controls, built on the school style above)*/
+html{color-scheme:light}
+body{background:#fff;color:#535557}
+:root,body{--school:#4b92db}
+body#bus{--school:#c59217}body#cons{--school:#4b92db}body#mse{--school:#007f64}body#hps{--school:#006890}body#ict{--school:#007698}body#ma{--school:#aa272f}body#trans{--school:#44697d}body#ht{--school:#d52b1e}body#cals{--school:#e9994a}body#ct{--school:#8c8b8a}
+*,*::before,*::after{box-sizing:border-box}
+#app{line-height:1.45;font-size:14px;color:#535557}
+.columns::after{content:"";display:table;clear:both}
+.columns>.column{padding-right:20px;min-width:0}
+.columns>.column+.column{padding-right:0;padding-left:20px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;margin-top:15px}
+label{display:block;font-weight:bold;font-size:13px;margin:0 0 4px;color:#535557}
+input,select{width:100%;min-width:0;padding:7px 8px;border:1px solid #aaabab;border-radius:0;background:#fff;color:#333;font:14px Arial,Helvetica,sans-serif;line-height:1.3}
+input:disabled,select:disabled{color:#246541}
+.ok{border:2px solid #2f8a4c!important;background:#eef8f1!important}
+.bad{border:2px solid #b8322a!important;background:#fdf1ef!important}
+button{font:bold 14px Arial,Helvetica,sans-serif;line-height:1.2;padding:9px 16px;border:2px solid var(--school);border-radius:0;background:#fff;color:var(--school);cursor:pointer}
+button.primary{background:var(--school);color:#fff}
+button:hover:not(:disabled){filter:brightness(.92)}
+button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--school);outline-offset:2px}
+button:disabled{opacity:.45;cursor:not-allowed}
+.buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
+.question{margin-top:15px;padding:12px 15px 14px;background:#f4f5f5;border-left:4px solid var(--school)}
+.question p:first-child{margin-top:0}
+.question p{margin-top:8px}
+.question ul{margin-top:6px}
+.question li{font-weight:bold;color:#333}
+.question b{color:#333}
+p.jobno{margin-top:6px;font-size:13px;color:#aaabab}
+.tries{display:flex;align-items:center;gap:8px;font-size:13px;margin-top:10px}
+.pip{width:14px;height:14px;border-radius:50%;border:2px solid var(--school);background:var(--school);flex:none}
+.pip.used{background:#fff;border-color:#aaabab}
+.status{margin-top:15px;padding:12px 15px;border-left:4px solid #2f8a4c;background:#e9f5ee;color:#246541}
+.status.warn{border-left-color:#c58a17;background:#fdf5e2;color:#7a5410}
+.status.fail{border-left-color:#b8322a;background:#fbecea;color:#a33126}
+.status b{font-size:16px}
+.status ul{margin-top:8px}
+.status li{color:inherit;margin-left:20px;font-size:13.5px}
+.error{color:#a33126}
+.note{margin-top:15px;padding:10px 12px;background:#f4f5f5;border-left:4px solid var(--school);font-size:13.5px}
+.hidden{display:none!important}
+.tablewrap{overflow-x:auto}
+.tablewrap table{width:100%;font-variant-numeric:tabular-nums}
+th{text-align:left;background:#f4f5f5}
+tr.chosen td{background:#e9f5ee;font-weight:bold}
+#visual{margin-top:15px}
+#visual svg{width:100%;max-width:420px;display:block;margin:0 auto}
+.caption{font-size:13px}
+.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:15px}
+.stat{border:1px solid #aaabab;padding:8px 10px}
+.stat small{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+.stat b{display:block;font-size:20px;margin-top:4px;color:#333}
+details{margin-top:15px}
+summary{cursor:pointer;font-weight:bold;color:var(--school)}
+@media(max-width:800px){body{padding:0 16px 20px 16px}.columns>.column,.columns>.column+.column{float:none;width:100%;padding:0}.fields{grid-template-columns:1fr}.summary{grid-template-columns:1fr 1fr 1fr}}
+</style></head><body id="cons">
+<script>if(!document.body.id)document.body.id='cons'</script>
+<h1>Conduit Sizing Lab</h1>
+<h2>2024 Canadian Electrical Code · Rule 12-910 · Table 6 series → Table 8 → Table 9 series</h2>
+<div id="app">
+<div class="columns">
+<div class="column">
+<h3>Size the raceway for this job</h3>
+<div class="fields"><div><label for="level">Conductors</label><select id="level" onchange="newQuestion()"><option value="same">All the same conductor</option><option value="mixed">Mixed sizes / insulation</option></select></div><div><label for="supply">Supply system</label><select id="supply" onchange="newQuestion()"><option value="any">Either</option><option value="1ph">Single-phase · 120/240 V</option><option value="3ph">3-phase · 120/208 V</option></select></div></div>
+<div class="buttons"><button class="primary" onclick="newQuestion()">New job</button></div>
+<div id="question" class="question"></div><p class="jobno" id="qNumber"></p>
+<h4>Work it out with your codebook</h4>
+<div class="fields"><div><label for="studentCount">Number of conductors in the raceway</label><input id="studentCount" type="number" min="1" step="1"></div><div><label for="studentArea">Combined conductor area (mm²)</label><input id="studentArea" type="number" min="0" step="0.01"></div><div><label for="studentFill">Table 8 fill limit (%)</label><select id="studentFill"><option value="">Choose…</option><option>53</option><option>31</option><option>40</option></select></div><div><label for="studentTable">Table 9 lookup</label><select id="studentTable"><option value="">Choose…</option><option>9C</option><option>9E</option><option>9G</option></select></div><div><label for="studentSize">Minimum trade size</label><select id="studentSize"><option value="">Choose…</option></select></div></div>
+<div class="buttons"><button class="primary" id="checkBtn" onclick="checkAnswer()">Check answer</button></div>
+<div class="tries" id="tries"></div><div id="feedback" aria-live="polite"></div><div id="solution" class="hidden"></div>
+</div>
+<div class="column">
+<h3>Looking into the raceway</h3>
+<div id="visual"></div>
+<p class="caption">Cross-section drawn to scale from the Table 6 areas and Table 9A internal diameters: coloured insulation, nylon jacket on T90, stranded copper. Conductors settle to the bottom of the raceway as they would after a pull. Wall thickness is approximate and for illustration only.</p>
+<div class="summary"><div class="stat"><small>Conductors</small><b id="countStat"></b></div><div class="stat"><small>Table 8 limit</small><b id="fillStat"></b></div><div class="stat"><small>Table 9 lookup</small><b id="tableStat"></b></div></div>
+</div>
+</div>
+<h3>Follow the three-table method</h3>
+<div class="columns">
+<div class="column">
+<h4>0 · Count the conductors</h4><p>Add up the quantity of every conductor listed for the raceway.</p>
+<h4>1 · Table 6 series: conductor area</h4><p>Match the insulation designation, voltage, jacket, construction and size. Read the area for that quantity of conductors, then add the group areas when sizes or insulation differ.</p>
+<h4>2 · Table 8: allowable percentage</h4><p>For ordinary non-lead-sheathed insulated conductors: one = 53%; two = 31%; three or more = 40%.</p>
+</div>
+<div class="column">
+<h4>3 · Table 9 series: raceway capacity</h4><p>Use 9C for 53%, 9E for 31% or 9G for 40%. Choose the correct raceway column, then the first trade size with enough allowable area.</p>
+<p class="note">A Table 9 allowable-fill area already includes the percentage. Compare the conductor area directly with that value. Do not multiply it by 40% a second time.</p>
+<h4>Two tries per question</h4><p>After your first check, correct answers lock in green and you get a hint for each red one. The worked solution appears after a correct answer or your second try.</p>
+</div>
+</div>
+</div>
+<p id="footer">Educational practice aid · CSA C22.1:24, Rule 12-910 and Tables 6A, 6K, 8 and 9 series. Verify against your codebook.</p>
+<script>
+/* CSA C22.1:24 Table 6A and Table 6K, stranded conductors. Columns: 1-10 and 20 conductors. */
+const QCOLS=[1,2,3,4,5,6,7,8,9,10,20];
+const DATA={A:{name:'RW90XLPE unjacketed 600 V',table:'6A',rows:[['14',[8.87,17.8,26.6,35.5,44.4,53.2,62.1,71.0,79.8,88.7,178]],['12',[11.6,23.2,34.8,46.4,58.0,69.5,81.1,92.7,105,116,232]],['10',[15.7,31.4,47.1,62.8,78.5,94.2,110,126,142,157,314]],['8',[28.2,56.4,84.6,113,141,170,198,226,254,282,564]],['6',[38.0,75.9,114,152,190,228,266,304,342,380,759]],['4',[52.5,105,158,210,263,315,367,420,472,525,1049]],['3',[62.0,124,186,248,310,372,434,496,558,620,1239]],['2',[73.9,148,222,296,370,444,518,592,666,739,1478]],['1',[99.1,199,298,397,496,595,694,793,892,991,1981]],['1/0',[119,237,355,473,592,710,828,946,1065,1183,2365]],['2/0',[142,284,426,568,710,852,994,1135,1277,1419,2838]],['3/0',[171,342,512,683,854,1024,1195,1366,1536,1707,3413]],['4/0',[207,413,620,826,1032,1239,1445,1651,1858,2064,4128]],['250',[252,504,755,1007,1259,1510,1762,2014,2265,2517,5033]],['300',[293,586,878,1171,1463,1756,2048,2341,2633,2926,5852]],['350',[332,663,994,1325,1656,1987,2318,2649,2980,3311,6621]],['400',[373,746,1119,1492,1865,2238,2611,2984,3357,3730,7459]],['450',[413,825,1237,1649,2062,2474,2886,3298,3711,4123,8245]],['500',[451,902,1352,1803,2253,2704,3154,3605,4055,4506,9011]],['600',[562,1124,1685,2247,2808,3370,3932,4493,5055,5616,11232]],['700',[641,1281,1921,2561,3201,3842,4482,5122,5762,6402,12804]],['750',[680,1359,2038,2718,3397,4076,4756,5435,6114,6794,13587]],['800',[719,1438,2157,2875,3594,4313,5031,5750,6469,7187,14374]],['900',[797,1594,2391,3187,3984,4781,5578,6374,7171,7968,15935]],['1000',[872,1744,2616,3488,4360,5232,6104,6976,7848,8720,17440]],['1250',[1109,2217,3325,4433,5541,6649,7757,8865,9973,11081,22161]],['1500',[1300,2600,3900,5199,6499,7799,9099,10398,11698,12998,25995]],['1750',[1492,2984,4475,5967,7459,8950,10442,11934,13425,14917,29833]],['2000',[1682,3363,5045,6726,8408,10089,11771,13452,15134,16815,33630]]]},K:{name:'T90 NYLON',table:'6K',rows:[['14',[6.16,12.4,18.5,24.7,30.8,37.0,43.1,49.3,55.5,61.6,124]],['12',[8.45,16.9,25.4,33.8,42.3,50.7,59.2,67.6,76.1,84.5,169]],['10',[13.7,27.4,41.0,54.7,68.3,82.0,95.6,110,123,137,274]],['8',[23.7,47.4,71.1,94.7,119,143,166,190,214,237,474]],['6',[32.7,65.4,98.1,131,164,197,229,262,295,327,654]],['4',[53.2,107,160,213,266,320,373,426,479,532,1064]],['3',[62.8,126,189,252,314,377,440,503,565,628,1256]],['2',[74.9,150,225,300,375,449,524,599,674,749,1497]],['1',[101,202,303,404,505,605,706,807,908,1009,2017]],['1/0',[121,241,361,481,601,722,842,962,1082,1202,2404]],['2/0',[144,288,432,576,720,864,1008,1152,1296,1440,2880]],['3/0',[173,346,519,692,865,1038,1211,1384,1557,1730,3460]],['4/0',[209,418,627,836,1045,1254,1463,1672,1881,2090,4179]],['250',[256,512,767,1023,1279,1534,1790,2045,2301,2557,5113]],['300',[297,594,891,1188,1485,1781,2078,2375,2672,2969,5937]],['350',[336,672,1007,1343,1678,2014,2349,2685,3021,3356,6712]],['400',[378,756,1134,1511,1889,2267,2645,3022,3400,3778,7555]],['450',[418,835,1252,1670,2087,2504,2921,3339,3756,4173,8346]],['500',[456,912,1368,1824,2279,2735,3191,3647,4103,4558,9116]]]}};
+for(const d of Object.values(DATA)){d.areas={};d.sizes=d.rows.map(r=>r[0]);d.rows.forEach(([sz,v])=>d.areas[sz]=v)}
+/* Codebook misprints (6K: No. 6 x 6 printed 1975, No. 2 x 5 printed 3758): corrected above and never used in questions */
+const MISPRINT={K:{'6':6,'2':5}};const GEN_MAX={A:'1000',K:'500'};
+const isAWG=s=>!/^\d{3,4}$/.test(s),sizeLabel=s=>isAWG(s)?`No. ${s} AWG`:`${s} kcmil`;
+/* CSA C22.1:24 Tables 9A, 9C (53%), 9E (31%) and 9G (40%): internal diameter (mm) and allowable fill area (mm²), trade sizes 16-155 */
+const TRADES=[16,21,27,35,41,53,63,78,91,103,129,155];
+const INCH={16:'½',21:'¾',27:'1',35:'1¼',41:'1½',53:'2',63:'2½',78:'3',91:'3½',103:'4',129:'5',155:'6'};
+const T9={
+ RMC:{id:[16.05,21.23,27.0,35.41,41.25,52.91,63.22,78.49,90.68,102.87,128.85,154.76],
+  53:[107.23,187.61,303.45,521.94,708.29,1165.31,1663.7,2564.45,3422.86,4404.97,6910.9,9969.73],
+  31:[62.72,109.74,177.49,305.28,414.29,681.6,973.11,1499.96,2002.05,2576.49,4042.22,5831.35],
+  40:[80.93,141.6,229.02,393.91,534.56,879.48,1255.62,1935.43,2583.29,3324.51,5215.77,7524.32]},
+ PVC:{id:[14.57,19.77,25.4,31.75,38.1,50.8,61.3,76.2,88.4,100.1,125.85,149.75],
+  53:[88.37,162.7,268.55,419.62,604.25,1074.22,1564.18,2416.99,3252.9,4170.94,6592.83,9334.68],
+  31:[51.69,95.16,157.08,245.44,353.43,628.32,914.9,1413.71,1902.64,2439.61,3856.19,5459.91],
+  40:[66.69,122.79,202.68,316.69,456.04,810.73,1180.51,1824.15,2455.02,3147.88,4975.72,7045.04]},
+ EMT:{id:[15.4,20.5,26.2,34.6,40.5,52.1,69.4,85.2,97.4,110.0,128.9,154.8],
+  53:[98.72,174.93,285.74,498.33,682.77,1129.9,2004.86,3021.66,3948.97,5036.76,6916,9975],
+  31:[57.74,102.32,167.13,291.48,399.36,660.89,1172.66,1767.38,2309.77,2946.03,4045,5834],
+  40:[74.51,132.03,215.65,376.1,515.3,852.76,1513.1,2280.49,2980.35,3801.33,5520,7528]}};
+const IDS={RMC:T9.RMC.id,PVC:T9.PVC.id,EMT:T9.EMT.id};
+const RACE_NAME={EMT:'EMT',PVC:'rigid PVC',RMC:'rigid metal conduit'},RACE_CAP={EMT:'EMT',PVC:'Rigid PVC',RMC:'Rigid metal conduit'};
+/* Illustration only: approximate wall thickness (mm) and stranded copper diameter (mm) */
+const WALL={EMT:1.2,PVC:2.5,RMC:2.9};/* bare stranded copper diameter for the drawing only (from conductor cross-section in mm²) */
+const CU_MM2={'14':2.08,'12':3.31,'10':5.26,'8':8.37,'6':13.3,'4':21.2,'3':26.7,'2':33.6,'1':42.4,'1/0':53.5,'2/0':67.4,'3/0':85.0,'4/0':107.2};
+const cuDia=s=>{const a=CU_MM2[s]||Number(s)*0.5067;return Math.sqrt(4*a/Math.PI)*1.12};
+const COLORS={black:'#22272b',red:'#b8322a',blue:'#2f5fa8',white:'#f2f0e4'};
+const SYS={'1ph':{label:'120/240 V single-phase',c:[{h:1,neu:1},{h:2,neu:0},{h:2,neu:1}]},'3ph':{label:'120/208 V 3-phase',c:[{h:1,neu:1},{h:2,neu:0},{h:3,neu:1},{h:3,neu:0}]}};
+const SITES={EMT:[{t:'Exposed EMT along the block wall of a warehouse, from the panel to a pull box at the far bay',wet:0,sys:'3ph'},{t:'EMT above the T-bar ceiling in an office renovation, panel to a junction box',wet:0,sys:'3ph'},{t:'EMT across a heated school mechanical room',wet:0,sys:'3ph'},{t:'EMT on the wall of a heated, dry detached shop',wet:0,sys:'1ph'},{t:'EMT exposed in an unfinished basement, from the panel to a junction box',wet:0,sys:'1ph'}],PVC:[{t:'Rigid PVC run underground from a house to a detached garage (wet location)',wet:1,sys:'1ph'},{t:'Rigid PVC surface-mounted in a car wash bay (wet location)',wet:1,sys:'3ph'},{t:'Rigid PVC through a dairy barn (wet, corrosive location)',wet:1,sys:'1ph'}],RMC:[{t:'Rigid metal conduit up the outside wall of a strip mall (wet location)',wet:1,sys:'3ph'},{t:'Rigid metal conduit exposed in a parkade, subject to mechanical damage (damp location)',wet:1,sys:'3ph'},{t:'Rigid metal conduit across a rooftop to mechanical equipment (wet location)',wet:1,sys:'3ph'},{t:'Rigid metal conduit on the outside wall of a farm shop (wet location)',wet:1,sys:'1ph'},{t:'Rigid metal conduit exposed in an acreage garage where it could be hit by equipment (damp location)',wet:1,sys:'1ph'}]};
+const FEEDER={EMT:[{t:'EMT feeder from the main switchboard to a sub-panel in a light-industrial shop',wet:0,sys:'3ph',feeder:1},{t:'EMT feeder in the electrical room of an apartment building, from the main breaker to the meter stack',wet:0,sys:'3ph',feeder:1},{t:'EMT feeder from the main panel to a sub-panel in a heated detached shop',wet:0,sys:'1ph',feeder:1},{t:'EMT feeder above the ceiling of a house addition, from the main panel to a new sub-panel',wet:0,sys:'1ph',feeder:1}],PVC:[{t:'Rigid PVC feeder run underground from the service to a farm building (wet location)',wet:1,sys:'1ph',feeder:1},{t:'Rigid PVC feeder underground from a pad-mount transformer to a commercial building (wet location)',wet:1,sys:'3ph',feeder:1}],RMC:[{t:'Rigid metal conduit feeder up the outside wall of a warehouse to a rooftop unit disconnect (wet location)',wet:1,sys:'3ph',feeder:1},{t:'Rigid metal conduit feeder exposed in a parkade to a sub-panel (damp location)',wet:1,sys:'3ph',feeder:1},{t:'Rigid metal conduit feeder on the outside of a farm shop to its sub-panel (wet location)',wet:1,sys:'1ph',feeder:1}]};
+const FIELDS=['studentCount','studentArea','studentFill','studentTable','studentSize'],FIELD_NAMES=['Conductor count','Conductor area','Fill limit','Table 9 letter','Trade size'];
+const $=id=>document.getElementById(id),esc=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),fmt=x=>Number(x).toFixed(2),pick=a=>a[Math.floor(Math.random()*a.length)],rand=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+let current=null,serial=0,last='';const jobs=[];
+function area(g){return DATA[g.family].areas[g.size][g.qty===20?10:g.qty-1]}
+function fillFor(n){return n===1?53:n===2?31:40}
+function tableFor(n){return n===1?'9C':n===2?'9E':'9G'}
+function capacity(type,size,fill){return T9[type][fill][TRADES.indexOf(Number(size))]}
+function calculate(groups,type){const count=groups.reduce((a,g)=>a+g.qty,0),total=groups.reduce((a,g)=>a+area(g),0),fill=fillFor(count);return {count,total,fill,table:tableFor(count),minimum:TRADES.find(s=>capacity(type,s,fill)+1e-9>=total)||null}}
+
+/* ---------- Job generator (no bonding conductors) ---------- */
+function colorsFor(n,sys){const pat=sys==='3ph'?['red','black','blue','white']:['black','red','white'];return Array.from({length:n},(_,i)=>pat[i%pat.length])}
+const FEEDER_QTY={'1ph':[2,3,6,9],'3ph':[3,4,6,8,9]}; /* single sets or parallel sets */
+function randGroup(f,minQ,sys){const d=DATA[f],sizes=d.sizes.slice(0,d.sizes.indexOf(GEN_MAX[f])+1);const sz=Math.random()<.35?pick(sizes.slice(0,3)):pick(sizes);const qs=QCOLS.filter(q=>q>=minQ&&(q<=10||sizes.indexOf(sz)<=2)&&(sizes.indexOf(sz)<3||FEEDER_QTY[sys].includes(q))&&!(MISPRINT[f]&&MISPRINT[f][sz]===q));return {family:f,size:sz,qty:pick(qs)}}
+function genQuestion(level,supply){
+ const target=pick(TRADES);let fallback=null;
+ for(let t=0;t<6000;t++){
+  const type=pick(['EMT','PVC','RMC']),sites=SITES[type].concat(FEEDER[type]).filter(s=>supply==='any'||s.sys===supply);if(!sites.length)continue;
+  const site=pick(sites),fams=site.wet?['A']:['A','K'];let groups=[];
+  if(level==='same')groups=[randGroup(pick(fams),2,site.sys)];
+  else{const k=rand(2,3);let guard=0;while(groups.length<k&&guard++<50){const g=randGroup(pick(fams),1,site.sys);if(!groups.some(x=>x.family===g.family&&x.size===g.size))groups.push(g)}if(groups.length<2)continue;groups.sort((x,y)=>DATA.A.sizes.indexOf(y.size)-DATA.A.sizes.indexOf(x.size))}
+  if(!!site.feeder!==groups.some(g=>DATA.A.sizes.indexOf(g.size)>=3))continue;
+  const r=calculate(groups,type);if(!r.minimum||r.count<2)continue;
+  if(type==='EMT'&&r.fill===40&&r.total>5219.8&&r.total<=5520)continue; /* avoids the 9G EMT 129 misprint */
+  groups.forEach(g=>g.colors=colorsFor(g.qty,site.sys));
+  const q={type,site,level,groups,attempts:[],revealed:false,svg:''};if(!fallback)fallback=q;
+  if(r.minimum!==target)continue;
+  const sig=JSON.stringify([type,groups.map(g=>[g.family,g.size,g.qty])]);if(sig===last)continue;last=sig;
+  return q}
+ return fallback}
+const conductorLine=g=>`${g.qty} × ${sizeLabel(g.size)} ${DATA[g.family].name}`;
+function questionLines(q){return {job:`${q.site.t}.`,raceway:RACE_CAP[q.type],supply:SYS[q.site.sys].label,list:q.groups.map(conductorLine),ask:'No other conductors are in the raceway. Find the minimum trade size for conductor fill (Rule 12-910).'}}
+function questionHTML(q){const L=questionLines(q);return `<p><b>Job:</b> ${esc(L.job)}</p><p><b>Raceway:</b> ${esc(L.raceway)} · <b>Supply:</b> ${esc(L.supply)}</p><p><b>Conductors in the raceway</b> (stranded copper, non-lead-sheathed):</p><ul>${L.list.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><p>${esc(L.ask)}</p>`}
+
+/* ---------- Practice flow with two tries ---------- */
+function resetFields(){FIELDS.forEach(id=>{const el=$(id);el.value='';el.disabled=false;el.classList.remove('ok','bad')})}
+function renderTries(){const q=current,used=q.attempts.length,left=q.revealed?0:2-used;$('tries').innerHTML=`<span class="pip ${used>=1?'used':''}"></span><span class="pip ${used>=2?'used':''}"></span><span>${q.revealed?'Question complete. Start a new job when ready.':`${left} ${left===1?'try':'tries'} left · solution unlocks after a correct answer or two tries`}</span>`;$('checkBtn').disabled=q.revealed}
+function newQuestion(){const q=genQuestion($('level').value,$('supply').value);if(current&&!current.attempts.length){jobs.splice(jobs.indexOf(current),1);serial--}q.n=++serial;q.levelLabel=$('level').value==='same'?'All the same conductor':'Mixed sizes / insulation';current=q;jobs.push(q);$('question').innerHTML=questionHTML(q);$('qNumber').textContent=`Job ${q.n}`;resetFields();$('feedback').innerHTML='';$('solution').classList.add('hidden');renderTries();draw(q,null);['countStat','fillStat','tableStat'].forEach(id=>$(id).textContent='?')}
+function hints(q,checks){const h=[];
+ if(!checks[0])h.push('Conductor count: add up the quantity of every conductor listed for the raceway.');
+ if(!checks[1])h.push('Conductor area: for each wire type and size, read the Table 6 entry for that quantity, then add the groups together. Make sure you are in the right table (6A for RW90XLPE, 6K for T90 NYLON).');
+ if(!checks[2])h.push('Fill limit: Table 8 depends only on the number of conductors in the raceway.');
+ if(!checks[3])h.push('Table 9 letter: it must match the fill percentage. 53% → 9C, 31% → 9E, 40% → 9G.');
+ if(!checks[4])h.push(`Trade size: go down the ${RACE_NAME[q.type]} column and stop at the first size whose allowable area is equal to or larger than the conductor area.`);
+ return h}
+function checkAnswer(){const q=current;if(q.revealed)return;const r=calculate(q.groups,q.type);
+ if(FIELDS.some(id=>!$(id).value)){$('feedback').innerHTML='<p class="error">Fill in all five answer fields before checking.</p>';return}
+ const ans=FIELDS.map(id=>$(id).value);
+ const checks=[Number(ans[0])===r.count,Math.abs(Number(ans[1])-r.total)<=.11,Number(ans[2])===r.fill,ans[3]===r.table,Number(ans[4])===r.minimum];
+ q.attempts.push({ans,checks});const n=q.attempts.length;
+ checks.forEach((ok,i)=>{const el=$(FIELDS[i]);el.classList.toggle('ok',ok);el.classList.toggle('bad',!ok);if(ok)el.disabled=true});
+ const marks=checks.map((ok,i)=>`${ok?'✓':'✗'} ${FIELD_NAMES[i]}`).join(' · ');
+ if(checks.every(Boolean)){q.result=n===1?'Correct on the first try':'Correct on the second try';$('feedback').innerHTML=`<div class="status"><b>${q.result}</b><br>${marks}</div>`;reveal()}
+ else if(n<2){$('feedback').innerHTML=`<div class="status warn"><b>Not yet · one try left</b><br>${marks}<ul>${hints(q,checks).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`}
+ else{q.result='Out of tries';$('feedback').innerHTML=`<div class="status fail"><b>Out of tries</b><br>${marks}<br>Compare your work with the worked solution below.</div>`;reveal()}
+ renderTries()}
+function solutionLines(q){const r=calculate(q.groups,q.type);return [
+ `Step 0 · Count: ${q.groups.length>1?q.groups.map(g=>g.qty).join(' + ')+' = ':''}${r.count} conductors`,
+ 'Step 1 · Table 6 areas:',...q.groups.map(g=>`    Table ${DATA[g.family].table}: ${conductorLine(g)} = ${fmt(area(g))} mm²`),`    Total conductor area = ${fmt(r.total)} mm²`,
+ `Step 2 · Table 8: ${r.count} conductors → ${r.fill}% → Table ${r.table}`,
+ `Step 3 · Table ${r.table}, ${RACE_NAME[q.type]} column: first size with at least ${fmt(r.total)} mm² is trade size ${r.minimum}`]}
+function reveal(){const q=current,r=calculate(q.groups,q.type);q.revealed=true;$('solution').innerHTML=`<div class="note"><b>Worked solution</b><br>${solutionLines(q).map(l=>esc(l).replace(/^ {4}/,'&nbsp;&nbsp;&nbsp;&nbsp;')).join('<br>')}</div><div class="tablewrap">${comparisonHTML(q.type,r)}</div>`;$('solution').classList.remove('hidden');$('countStat').textContent=r.count;$('fillStat').textContent=r.fill+'%';$('tableStat').textContent=r.table;draw(q,IDS[q.type][TRADES.indexOf(r.minimum)]);renderTries()}
+function comparisonHTML(type,r){return `<table><thead><tr><th>Trade size</th><th>${r.table} ${RACE_NAME[type]} (mm²)</th><th>Result</th></tr></thead><tbody>${TRADES.map(size=>`<tr class="${size===r.minimum?'chosen':''}"><td>${size} (${INCH[size]} in)${size===r.minimum?' · minimum':''}</td><td>${fmt(capacity(type,size,r.fill))}</td><td>${capacity(type,size,r.fill)>=r.total?'Fits':'Too small'}</td></tr>`).join('')}</tbody></table>`}
+
+/* ---------- Realistic cross-section ---------- */
+function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function pack(rs,R,seed){const rnd=rng(seed),order=rs.map((_,i)=>i);for(let i=order.length-1;i>0;i--){const j=Math.floor(rnd()*(i+1));[order[i],order[j]]=[order[j],order[i]]}order.sort((a,b)=>rs[b]-rs[a]>4?1:rs[a]-rs[b]>4?-1:0);
+ const placed=[],pos=new Array(rs.length);
+ for(const i of order){const r=rs[i],step=Math.max(.8,r/5);let best=null;
+  for(let x=-(R-r);x<=R-r+1e-6;x+=step){const ymax=Math.sqrt(Math.max(0,(R-r)**2-x*x));
+   for(let y=ymax;y>=-ymax;y-=step){if(best&&y<best.y-.01)break;if(placed.every(p=>Math.hypot(x-p.x,y-p.y)>=r+p.r+.4)){if(!best||y>best.y+.01||(Math.abs(y-best.y)<=.01&&Math.abs(x)<Math.abs(best.x)))best={x,y,r};break}}}
+  if(!best)best={x:(rnd()-.5)*R,y:(rnd()-.5)*R,r,over:true};placed.push(best);pos[i]=best}
+ return pos}
+function shade(hex,k){const n=parseInt(hex.slice(1),16);return `rgb(${Math.round((n>>16)*k)},${Math.round((n>>8&255)*k)},${Math.round((n&255)*k)})`}
+function conduitDefs(){return `<defs><linearGradient id="emt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f6f7"/><stop offset=".45" stop-color="#b9c2c7"/><stop offset=".7" stop-color="#dfe4e6"/><stop offset="1" stop-color="#8e999f"/></linearGradient><linearGradient id="rmc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d4d8d4"/><stop offset=".5" stop-color="#8f9690"/><stop offset=".75" stop-color="#b5bab3"/><stop offset="1" stop-color="#6c7470"/></linearGradient><linearGradient id="pvc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a9b0b4"/><stop offset="1" stop-color="#7e868b"/></linearGradient><radialGradient id="bore" cx=".5" cy=".42" r=".6"><stop offset="0" stop-color="#3b444a"/><stop offset="1" stop-color="#1b2125"/></radialGradient><radialGradient id="cu" cx=".35" cy=".35" r=".75"><stop offset="0" stop-color="#f6c58c"/><stop offset=".55" stop-color="#c47a3a"/><stop offset="1" stop-color="#7c4519"/></radialGradient></defs>`}
+function draw(q,diameter){const type=q.type,conds=[];q.groups.forEach(g=>{const a=area(g)/g.qty;for(let i=0;i<g.qty;i++)conds.push({a,col:g.colors[i]||'black',size:g.size,nylon:g.family==='K',name:`${sizeLabel(g.size)} ${DATA[g.family].name}`})});
+ const sum=conds.reduce((s,c)=>s+c.a,0),D=diameter||Math.sqrt(sum/.4*4/Math.PI),Rin=140,sc=Rin/(D/2),Rout=Math.min(Rin+WALL[type]*sc,190);
+ const rs=conds.map(c=>Math.sqrt(c.a/Math.PI)*sc),pos=pack(rs,Rin-1.5,Math.round(sum*100)+conds.length*977);
+ const wires=pos.map((p,i)=>{const c=conds[i],R=p.r,hex=COLORS[c.col],cx=(200+p.x).toFixed(2),cy=(200+p.y).toFixed(2),core=Math.min(cuDia(c.size)/2*sc,R*.8),big=DATA.A.sizes.indexOf(c.size)>=8,s=core/(big?5:3);
+  const pts=[[0,0],...[0,1,2,3,4,5].map(k=>[2*s*Math.cos(k*Math.PI/3),2*s*Math.sin(k*Math.PI/3)])];if(big)for(let k=0;k<12;k++)pts.push([3.93*s*Math.cos(k*Math.PI/6+Math.PI/12),3.93*s*Math.sin(k*Math.PI/6+Math.PI/12)]);
+  const strands=`<circle r="${core.toFixed(2)}" fill="#6b3a14"/>`+pts.map(([x,y])=>`<circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="${(s*.97).toFixed(2)}" fill="url(#cu)" stroke="#7c4519" stroke-width="${Math.min(.5,s*.12).toFixed(2)}"/>`).join('');
+  return `<g transform="translate(${cx} ${cy})"><title>${esc(c.name)}</title><circle r="${R.toFixed(2)}" fill="${hex}" stroke="${shade(hex,c.col==='white'?.72:.6)}" stroke-width="1"/>${c.nylon?`<circle r="${(R-.9).toFixed(2)}" fill="none" stroke="rgba(255,244,200,.55)" stroke-width="1.6"/>`:''}<ellipse cx="${(-R*.38).toFixed(2)}" cy="${(-R*.42).toFixed(2)}" rx="${(R*.34).toFixed(2)}" ry="${(R*.16).toFixed(2)}" transform="rotate(-38 ${(-R*.38).toFixed(2)} ${(-R*.42).toFixed(2)})" fill="white" opacity="${c.col==='white'?.5:.22}"/><circle r="${(core+Math.max(.4,R*.04)).toFixed(2)}" fill="none" stroke="rgba(0,0,0,.25)" stroke-width="${Math.max(.4,R*.05).toFixed(2)}"/>${strands}</g>`}).join('');
+ const fill={EMT:'url(#emt)',RMC:'url(#rmc)',PVC:'url(#pvc)'}[type];
+ const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 410" width="400" height="410" role="img" aria-label="Raceway cross-section with insulated conductors">${conduitDefs()}<rect width="400" height="410" fill="white"/><circle cx="200" cy="200" r="${Rout}" fill="${fill}" stroke="#4f5b62" stroke-width="1.2"/><circle cx="200" cy="200" r="${Rin}" fill="url(#bore)" stroke="#3a4449" stroke-width="1.5"/>${wires}<text x="200" y="402" text-anchor="middle" fill="#355666" font-family="Arial, sans-serif" font-size="12">${diameter?`${RACE_CAP[type]} · trade size ${q.revealed?calculate(q.groups,type).minimum:''} · internal diameter ${fmt(D)} mm`:`${RACE_CAP[type]} · trade size hidden`}</text></svg>`;
+ q.svg=svg;$('visual').innerHTML=svg}
+
+function reference(){let tables=Object.entries(DATA).map(([key,d])=>`<h3>Table ${d.table} · ${d.name} · stranded</h3><div class="tablewrap"><table><thead><tr><th>Size</th>${QCOLS.map(n=>`<th>${n}</th>`).join('')}</tr></thead><tbody>${d.rows.map(([size,arr])=>`<tr><td>${isAWG(size)?size+' AWG':size+' kcmil'}</td>${arr.map(v=>`<td>${v}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`).join('');
+ const t9=['RMC','PVC','EMT'].map(k=>`<h3>Table 9A/9C/9E/9G · ${RACE_CAP[k]}</h3><div class="tablewrap"><table><thead><tr><th>Trade size</th><th>ID, mm</th><th>9C 53%, mm²</th><th>9E 31%, mm²</th><th>9G 40%, mm²</th></tr></thead><tbody>${TRADES.map((s,i)=>`<tr><td>${s} (${INCH[s]} in)</td><td>${T9[k].id[i]}</td><td>${T9[k][53][i]}</td><td>${T9[k][31][i]}</td><td>${T9[k][40][i]}</td></tr>`).join('')}</tbody></table></div>`).join('');
+ $('reference').innerHTML=tables+t9}
+$('studentSize').insertAdjacentHTML('beforeend',TRADES.map(s=>`<option value="${s}">${s} (${INCH[s]} in)</option>`).join(''));
+newQuestion();
+</script></body></html>
